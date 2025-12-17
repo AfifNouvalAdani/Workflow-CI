@@ -1,0 +1,9 @@
+name: weather-env
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - mlflow==3.6.0
+      - scikit-learn
+      - pandas
+      - numpy
