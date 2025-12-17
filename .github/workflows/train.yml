@@ -20,10 +20,12 @@ jobs:
         
     - name: Install dependencies
       run: |
+        pip install --upgrade pip
         pip install mlflow==3.6.0
         pip install scikit-learn==1.7.2
         pip install pandas==2.3.3
-        pip install numpy==1.24.3
+        pip install numpy==2.3.5
+        pip install cloudpickle==3.1.2
         
     - name: Run MLflow Project
       run: |

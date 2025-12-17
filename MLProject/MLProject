@@ -1,5 +1,5 @@
-name: weather-classification
-conda_env: conda.yaml
-entry_points:
-  main:
-    command: "python modelling.py"
+  name: weather-classification
+  conda_env: conda.yaml
+  entry_points:
+    main:
+      command: "python modelling.py"
