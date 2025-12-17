@@ -1,0 +1,19 @@
+digest: 4e97c9c9
+name: dataset
+profile: '{"num_rows": 10560, "num_elements": 158400}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "Temperature", "required":
+  true}, {"type": "double", "name": "Humidity", "required": true}, {"type": "double",
+  "name": "Wind Speed", "required": true}, {"type": "double", "name": "Precipitation
+  (%)", "required": true}, {"type": "double", "name": "Atmospheric Pressure", "required":
+  true}, {"type": "double", "name": "UV Index", "required": true}, {"type": "double",
+  "name": "Visibility (km)", "required": true}, {"type": "boolean", "name": "Cloud
+  Cover_cloudy", "required": true}, {"type": "boolean", "name": "Cloud Cover_overcast",
+  "required": true}, {"type": "boolean", "name": "Cloud Cover_partly cloudy", "required":
+  true}, {"type": "boolean", "name": "Season_Spring", "required": true}, {"type":
+  "boolean", "name": "Season_Summer", "required": true}, {"type": "boolean", "name":
+  "Season_Winter", "required": true}, {"type": "boolean", "name": "Location_inland",
+  "required": true}, {"type": "boolean", "name": "Location_mountain", "required":
+  true}]}'
+source: '{"tags": {"mlflow.user": "LENOVO", "mlflow.source.name": "modelling.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

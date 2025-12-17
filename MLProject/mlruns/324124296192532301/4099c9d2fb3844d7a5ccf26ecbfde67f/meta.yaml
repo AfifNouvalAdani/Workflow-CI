@@ -1,0 +1,14 @@
+artifact_uri: file:C:/Users/LENOVO/Desktop/Workflow-CI/MLProject/mlruns/324124296192532301/4099c9d2fb3844d7a5ccf26ecbfde67f/artifacts
+end_time: 1765953830716
+entry_point_name: ''
+experiment_id: '324124296192532301'
+lifecycle_stage: active
+run_id: 4099c9d2fb3844d7a5ccf26ecbfde67f
+run_name: ci_cd_training
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765953808218
+status: 3
+tags: []
+user_id: LENOVO
