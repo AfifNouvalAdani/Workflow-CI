@@ -1,11 +1,15 @@
-name: weather-ml
 channels:
-  - conda-forge
+- conda-forge
 dependencies:
-  - python=3.12
-  - pip=23.3.1
-  - scikit-learn=1.5.0
-  - pandas=2.2.1
-  - numpy=1.26.4
-  - pip:
-    - mlflow==2.19.0
+- python=3.12
+- pip<=25.3
+- pip:
+  - mlflow==3.6.0
+  - cloudpickle==3.1.2
+  - numpy==2.3.4
+  - pandas==2.3.3
+  - psutil==7.0.0
+  - pyarrow==21.0.0
+  - scikit-learn==1.7.2
+  - scipy==1.15.3
+name: mlflow-env

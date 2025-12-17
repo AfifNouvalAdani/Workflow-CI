@@ -18,22 +18,22 @@ jobs:
       with:
         python-version: '3.12'
         
-    - name: Install MLflow and dependencies
+    - name: Install dependencies
       run: |
-        pip install mlflow==2.19.0
-        pip install scikit-learn pandas
+        pip install mlflow==3.6.0
+        pip install scikit-learn==1.7.2
+        pip install pandas==2.3.3
+        pip install numpy==1.24.3
         
     - name: Run MLflow Project
       run: |
         cd MLProject
-        mlflow run . --experiment-name github-ci
+        mlflow run . --experiment-name github-ci --env-manager local
         
     - name: Upload Artifacts to GitHub
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: mlflow-artifacts
         path: |
           MLProject/mlruns/
-          MLProject/weather_train_processed.csv
-          MLProject/weather_test_processed.csv
         retention-days: 7
