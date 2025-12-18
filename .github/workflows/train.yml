@@ -10,32 +10,51 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    # Langkah 1 & 2: Set up job otomatis, lalu checkout
     - name: Checkout repository
       uses: actions/checkout@v3
       
-    - name: Setup Python
+    # Langkah 3: Set up Python
+    - name: Set up Python 3.12.7
       uses: actions/setup-python@v4
       with:
-        python-version: '3.12'
+        python-version: '3.12.7' # Dispesifikkan
         
+    # Langkah 4: Check Environment (Tambahan Baru)
+    - name: Check Environment
+      run: |
+        echo "Python version:"
+        python --version
+        echo "Pip version:"
+        pip --version
+        echo "Current directory:"
+        pwd
+        echo "Contents of MLProject/:"
+        ls -la MLProject/
+        
+    # Langkah 5: Install dependencies
     - name: Install dependencies
       run: |
         pip install --upgrade pip
-        pip install mlflow==3.6.0
-        pip install scikit-learn==1.7.2
-        pip install pandas==2.3.3
-        pip install numpy==2.3.5
-        pip install cloudpickle==3.1.2
+        pip install mlflow==3.6.0 scikit-learn==1.7.2 pandas==2.3.3 numpy==2.3.5 cloudpickle==3.1.2
         
+    # Langkah 6: Set MLflow Tracking URI (Tambahan Eksplisit - Opsional)
+    - name: Set MLflow Tracking URI
+      run: |
+        echo "MLflow tracking URI is set within modelling.py to 'file:./mlruns'"
+        # Atau, jika ingin set via environment variable:
+        # echo "MLFLOW_TRACKING_URI=file:./mlruns" >> $GITHUB_ENV
+        
+    # Langkah 7: Run mlflow project
     - name: Run MLflow Project
       run: |
         cd MLProject
         mlflow run . --experiment-name github-ci --env-manager local
         
+    # Langkah 9 (Pengganti): Upload Artifacts to GitHub
     - name: Upload Artifacts to GitHub
       uses: actions/upload-artifact@v4
       with:
         name: mlflow-artifacts
-        path: |
-          MLProject/mlruns/
+        path: MLProject/mlruns/
         retention-days: 7
